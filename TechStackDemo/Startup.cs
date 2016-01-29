@@ -25,9 +25,10 @@ namespace TechStackDemo
             SignalRConfig.Configure(container, app, jsonSettings);
             WebApiConfig.Configure(container, jsonSettings);
             MvcConfig.Configure(container);
-            
 
+            BundleConfig.Configure();
 
+            //ensure configuration of WebAPI is complete
             WebApiConfig.EnsureConfigured();
         }
     }

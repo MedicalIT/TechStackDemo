@@ -6,3 +6,40 @@
 }
 
 <h2>Med IT Tech Site</h2>
+
+<div style="height: 500px; overflow-y: auto" id="host">
+
+    <div data-bind="component: {name: 'frobulator', params: $data.spot1 }"></div>
+
+
+    {{#component {name: Components.Frobulator.componentName, params: spot2 } /}}
+
+    <div data-bind="foreach: {data:$data.multiSpot, as: '$spot'}">
+        <!--ko component: {name: 'frobulator', params: $spot } --><!--/ko-->
+    </div>
+
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        var vm = {
+            spot1: {
+                counters: ['a', 'b', 'c']
+            },
+            
+            spot2: {
+                counters: ['d', 'e', 'f']
+            },
+            
+            multiSpot: [
+                { counters: ['a', 'f'] },
+                { counters: ['d', 'c'] },
+                { counters: ['b', 'e'] }
+            ]
+        };
+
+        ko.applyBindings(vm, document.getElementById('host'));
+    
+    </script>
+    
+}

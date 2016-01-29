@@ -2,12 +2,36 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge"/>
     <title>@ViewBag.Title</title>
+
+    <script type="text/javascript">
+        var SITE_INSTANCE = '@TechStackDemo.Utils.SiteInstance.SITE_INSTANCE';
+    </script>
+
+    @System.Web.Optimization.Scripts.Render("~/Bundles/Site")
+
+    <script type="text/javascript" src="~/signalr/hubs"></script>
+    @System.Web.Optimization.Scripts.Render("~/Bundles/PostSIgnalRHubs")
+
+    
+    @System.Web.Optimization.Scripts.Render("~/Bundles/RequireJS")
+    <script type="text/javascript">
+        requireConfig('@Url.Content("~/Scripts/RequireJS/text")')
+    </script>
+    @System.Web.Optimization.Scripts.Render("~/Bundles/components")
+
+    <script type="text/javascript">
+        //Enable knockout punches
+        ko.punches.enableAll();
+    
+    </script>
 </head>
 <body>
     <div>
         @RenderBody()
     </div>
 </body>
+@RenderSection("Scripts", required: false)
 </html>
