@@ -12,6 +12,9 @@ var Components;
                 this.increment = function (id) {
                     Data.counterRepository.increment(id);
                 };
+                this.decrement = function (id) {
+                    Data.counterRepository.increment(id, -2);
+                };
             }
             return ViewModel;
         })();

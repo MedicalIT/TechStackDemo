@@ -5,22 +5,20 @@ using System.Web;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using Microsoft.AspNet.SignalR;
+using TechStackDemo.Hubs;
 
 namespace TechStackDemo.IoC
 {
-    public class SignalRInstaller: IWindsorInstaller
+    public class HubManagerInstaller: IWindsorInstaller
     {
-        public SignalRInstaller()
+        public HubManagerInstaller()
         {
             
         }
-
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            //register hubs as transient.  Our SignalR resolver will work around poor support for disposal in SignalR
             container.Register(
-                Classes.FromThisAssembly().BasedOn(typeof(Hub<>)).WithServiceSelf().WithServiceAllInterfaces().LifestyleTransient()
+                Classes.FromThisAssembly().BasedOn<HubManagerBase>().WithServiceAllInterfaces().WithServiceSelf().LifestyleSingleton()
                 );
         }
     }

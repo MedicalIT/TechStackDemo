@@ -19,6 +19,9 @@
             public increment = (id: string) => {
                 Data.counterRepository.increment(id);
             }
+            public decrement = (id: string) => {
+                Data.counterRepository.increment(id, -2);
+            }
         }
 
 

@@ -119,6 +119,10 @@
       <HintPath>..\packages\Serilog.Sinks.Literate.1.2.0\lib\net45\Serilog.Sinks.Literate.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Serilog.Sinks.Seq, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Seq.1.5.27\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\dotnet\System.Collections.Immutable.dll</HintPath>
       <Private>True</Private>
@@ -205,12 +209,22 @@
     <Content Include="ClientSide\Frobulator\FrobulatorComponent.js">
       <DependentUpon>FrobulatorComponent.ts</DependentUpon>
     </Content>
+    <Content Include="ClientSide\Winner\WinnerComponent.html" />
+    <Content Include="ClientSide\Winner\WinnerComponent.js">
+      <DependentUpon>WinnerComponent.ts</DependentUpon>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Scripts\common.js.map">
       <DependentUpon>common.ts</DependentUpon>
     </Content>
     <Content Include="Scripts\collections\collections.js.map">
       <DependentUpon>collections.ts</DependentUpon>
+    </Content>
+    <Content Include="ClientSide\Frobulator\FrobulatorComponent.js.map">
+      <DependentUpon>FrobulatorComponent.ts</DependentUpon>
+    </Content>
+    <Content Include="ClientSide\Winner\WinnerComponent.js.map">
+      <DependentUpon>WinnerComponent.ts</DependentUpon>
     </Content>
     <None Include="Scripts\jquery\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\collections\collections.js">
@@ -250,6 +264,12 @@
     <Content Include="Scripts\Knockout\knockoutCollections.js.map">
       <DependentUpon>knockoutCollections.ts</DependentUpon>
     </Content>
+    <Content Include="Scripts\SignalR\SignalRConfig.js.map">
+      <DependentUpon>SignalRConfig.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\repository.js.map">
+      <DependentUpon>repository.ts</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -274,6 +294,8 @@
     <Compile Include="Hubs\Counter\CounterHub.cs" />
     <Compile Include="Hubs\Counter\CounterHubManager.cs" />
     <Compile Include="Hubs\Counter\ICounterHubClient.cs" />
+    <Compile Include="Hubs\HubManagerBase.cs" />
+    <Compile Include="IoC\HubManagerInstaller.cs" />
     <Compile Include="IoC\MvcControllerFactory.cs" />
     <Compile Include="IoC\MvcInstaller.cs" />
     <Compile Include="IoC\RepositoryInstaller.cs" />
@@ -286,15 +308,20 @@
     <Compile Include="Repository\Counter\CounterItem.cs" />
     <Compile Include="Repository\Counter\CounterRepository.cs" />
     <Compile Include="Repository\Counter\ICounterRepository.cs" />
+    <Compile Include="Scripts\CounterMutator.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utils\IChangeSubscriber.cs" />
+    <Compile Include="Utils\RxExtensions.cs" />
     <Compile Include="Utils\SafeRandom.cs" />
     <Compile Include="Utils\SiteInstance.cs" />
     <Compile Include="Utils\WebApiInheritingCustomDirectRouteProvider.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Worker\" />
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ClientSide\Frobulator\FrobulatorComponent.ts" />
+    <TypeScriptCompile Include="ClientSide\Winner\WinnerComponent.ts" />
     <TypeScriptCompile Include="Scripts\collections\collections.ts" />
     <TypeScriptCompile Include="Scripts\common.ts" />
     <TypeScriptCompile Include="Scripts\Knockout\knockoutCollections.ts" />

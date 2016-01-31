@@ -8,6 +8,6 @@ namespace TechStackDemo.Repository.Counter
         Task<IEnumerable<CounterItem>> GetAll();
         Task<CounterItem> Increment(string counter, int qty);
         Task Reset();
-        Task Reset(string counter);
+        Task Remove(string counter);
     }
 }

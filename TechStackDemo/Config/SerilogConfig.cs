@@ -15,6 +15,7 @@ namespace TechStackDemo.Config
 
             var logger = config.MinimumLevel.Debug()
                 .WriteTo.LiterateConsole()
+                .WriteTo.Seq("http://localhost:5341")
                 .CreateLogger();
 
             Log.Logger = logger;

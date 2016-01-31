@@ -20,6 +20,11 @@ namespace TechStackDemo.Repository.Counter
         {
             return new CounterItem(Id, value);
         }
+
+        public CounterItemDto ToDto()
+        {
+            return new CounterItemDto(this);
+        }
     }
 
     public class CounterItemDto

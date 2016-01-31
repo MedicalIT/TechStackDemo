@@ -20,6 +20,10 @@
 
 </div>
 
+<div id="other" data-bind="component: {name: 'winner'}">
+    
+</div>
+
 @section Scripts {
     <script type="text/javascript">
         var vm = {
@@ -40,6 +44,7 @@
 
         ko.applyBindings(vm, document.getElementById('host'));
     
+        ko.applyBindings({}, document.getElementById('other'));
     </script>
     
 }

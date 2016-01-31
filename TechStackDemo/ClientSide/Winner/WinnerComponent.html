@@ -1,0 +1,9 @@
+﻿<div>
+    <h1>{{total}}</h1>
+
+    <button data-bind="click:reset, enabled: canReset">Reset</button>
+
+    {{#if total() > 20}}
+    <h1>WINNER!  :)</h1>
+    {{/if}}
+</div>

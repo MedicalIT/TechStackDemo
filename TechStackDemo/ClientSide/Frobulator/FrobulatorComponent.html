@@ -1,7 +1,16 @@
 ﻿<div>
     <ul data-bind="foreach: counterValues">
         <li>
-            {{$data.Id}}: <button data-bind="click: decrement">--</button>  {{$data.Value}}  <button data-bind="click: _.partial($parent.increment, $data.Id)">++</button>
+            {{$data.Id}}:
+
+            <button data-bind="click: _.partial($parent.decrement, $data.Id)">--2</button>
+
+            {{$data.Value}}
+
+            <button data-bind="click: _.partial($parent.increment, $data.Id)">++</button>
+
+
+            {{#if $data.Value > 10}} :) {{/if}}
         </li>
     </ul>
 </div>

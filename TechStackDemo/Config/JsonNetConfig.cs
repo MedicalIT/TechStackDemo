@@ -15,7 +15,7 @@ namespace TechStackDemo.Config
 
             settings.DateFormatHandling = DateFormatHandling.IsoDateFormat;
             settings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
-            
+
             //settings.ContractResolver
 
             settings.NullValueHandling = NullValueHandling.Include;

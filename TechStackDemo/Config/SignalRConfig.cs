@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Castle.Windsor;
 using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Transports;
 using Newtonsoft.Json;
 using Owin;
 using TechStackDemo.IoC;
@@ -26,6 +27,17 @@ namespace TechStackDemo.Config
             GlobalHost.Configuration.DefaultMessageBufferSize = 500;
 
 
+            //SignalR JSON.Net handling - register dependency
+            var json = JsonSerializer.Create(jsonSettings);
+            GlobalHost.DependencyResolver.Register(
+                typeof(Newtonsoft.Json.JsonSerializer),
+                () => json //returning same variable each time..  (singleton)
+                );
+
+
+            ////Disable websockets
+            //var transportManager = GlobalHost.DependencyResolver.Resolve<ITransportManager>() as TransportManager;
+            //transportManager.Remove("websockets");
         }
     }
 }
