@@ -20,7 +20,7 @@ namespace TechStackDemo.Config
             app
                 .MapSignalR(new HubConfiguration()
                 {
-                    Resolver = new SignalRDependencyResolver(container)
+                    //Resolver = new SignalRDependencyResolver(container)
                 });
 
             GlobalHost.Configuration.MaxIncomingWebSocketMessageSize = null;  //no limit

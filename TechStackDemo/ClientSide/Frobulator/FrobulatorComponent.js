@@ -31,3 +31,4 @@ var Components;
         })();
     })(Frobulator = Components.Frobulator || (Components.Frobulator = {}));
 })(Components || (Components = {}));
+//# sourceMappingURL=FrobulatorComponent.js.map

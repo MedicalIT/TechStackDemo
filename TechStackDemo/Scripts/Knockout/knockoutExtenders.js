@@ -7,3 +7,4 @@ ko.subscribable.fn.rateLimitNotifyWhenStop = function (timeout) {
 ko.subscribable.fn.rateLimitFixedRate = function (timeout) {
     return this.extend({ rateLimit: { timeout: timeout, method: "notifyAtFixedRate" } });
 };
+//# sourceMappingURL=knockoutExtenders.js.map

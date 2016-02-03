@@ -9,5 +9,7 @@ namespace TechStackDemo.Repository.Counter
         Task<CounterItem> Increment(string counter, int qty);
         Task Reset();
         Task Remove(string counter);
+
+        Task Frobber();
     }
 }

@@ -40,3 +40,4 @@ var Components;
         })();
     })(Winner = Components.Winner || (Components.Winner = {}));
 })(Components || (Components = {}));
+//# sourceMappingURL=WinnerComponent.js.map

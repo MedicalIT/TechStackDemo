@@ -22,7 +22,7 @@ namespace TechStackDemo.Hubs.Counter
 
         private IHubContext<ICounterHubClient> GetCounterHubContext()
         {
-            var counterHubContext = GlobalHost.ConnectionManager.GetHubContext<ICounterHubClient>("CounterHub");
+            var counterHubContext = GlobalHost.ConnectionManager.GetHubContext<ICounterHubClient>("counterHub");
             return counterHubContext;
         }
 

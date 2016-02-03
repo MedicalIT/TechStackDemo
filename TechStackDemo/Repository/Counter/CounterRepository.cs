@@ -94,6 +94,11 @@ namespace TechStackDemo.Repository.Counter
             }
         }
 
+        public Task Frobber()
+        {
+            return Task.FromResult(0);
+        }
+
         public IObservable<CounterItem> GetChangesObservable()
         {
             return changes.AsObservable().ObserveOn(TaskPoolScheduler.Default);

@@ -8,3 +8,4 @@ $(function () {
     //start the SignalR hub connection
     Data.hubStart();
 });
+//# sourceMappingURL=SignalRConfig.js.map

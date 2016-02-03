@@ -115,3 +115,4 @@ var collections;
     })(collections.Dictionary);
     collections.ObservableDictionary = ObservableDictionary;
 })(collections || (collections = {}));
+//# sourceMappingURL=knockoutCollections.js.map
